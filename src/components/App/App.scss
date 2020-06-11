@@ -1,0 +1,165 @@
+#root{
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    font-size: 4vw;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.5vw 12vw;
+    margin-bottom: 2rem;
+  }
+
+  .label-main {
+    display: flex;
+
+    .label {
+      margin: 0.5vw;
+      font-size: 2vw;
+      background-color: #ffa48f;
+      color: white;
+      padding: 1.5vw;
+      width: 15vw;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      max-height: 3vw;
+
+    }
+
+    .label:active {
+      border: 5px greenyellow inset;
+    }
+
+
+  }
+
+  .info-cont {
+    height: 30vh;
+    // background-color: aqua;
+    width: 100vw;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+  }
+
+  .fas {
+    position: relative;
+    bottom: 10px;
+    font-size: 2vw;
+    right: 6vw;
+    top: -0.5vw;
+    cursor: pointer;
+    // transition: all 3s ease;
+  }
+
+  .fas:active {
+    color: lawngreen;
+  }
+
+}
+
+.human-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 3vw;
+  font-family: sans-serif;
+  padding: 0 16vw;
+  margin-top: 2vw;
+
+  p {
+    text-align: center;
+
+  }
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background-color: rgb(73, 79, 82);
+  color: white;
+  width: 100%;
+}
+
+.nav-link {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-expression {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h2{
+    font-size: 4vw;
+  }
+
+  h3{
+    font-size: 2.5vw;
+  }
+
+  .links-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    margin: 1vw 5vw;
+  }
+
+  a{
+    color: black;
+    // text-decoration: none;
+    font-size: 2vw;
+  }
+}
+
+$tablet: "(max-width: 503px)";
+
+
+
+@media #{$tablet} {
+  .main-expression {
+
+    h2{
+      font-size: 6vw;
+    }
+  
+    h3{
+      font-size: 3.5vw;
+    }
+  
+    .links-main {
+      flex-wrap: wrap;
+    }
+  
+    a{
+      color: black;
+      font-size: 4vw;
+    }
+  }
+
+  .main input {
+    font-size: 5vw;
+}
+
+}
