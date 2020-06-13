@@ -82,6 +82,13 @@ class InputBox extends Component {
         console.log(final);
         
         isValidCron(final)? this.props.humanFormat(cronstrue.toString(final)): this.props.humanFormat("Enter valid statement");
+
+        if(isValidCron(final)) {
+            let stateObj = {id: "100"};
+            let link = final.replace(/ /g, "_");
+            window.history.replaceState(stateObj, `/`, "/#_" + link)
+        }   
+
     }
 
     //The keyDown method will be used to push and pop the parts of expression as soon as certain keys are pressed
@@ -154,6 +161,7 @@ class InputBox extends Component {
 
             let mfinal = e.target.value;
             isValidCron(mfinal)? this.props.humanFormat(cronstrue.toString(mfinal)): this.props.humanFormat("Enter valid statement");
+
 
         }
 
@@ -237,13 +245,13 @@ class InputBox extends Component {
         // console.log(this.state.char);
         
 
-        if (this.state.char.length === 5 && isValidCron(this.state.char.join(" "))) {
+        // if (this.state.char.length === 5 && isValidCron(this.state.char.join(" "))) {
 
-            let stateObj = {id: "100"};
-            let link = this.state.char.join("_");
-            window.history.replaceState(stateObj, `/`, "/#_" + link)
+        //     let stateObj = {id: "100"};
+        //     let link = this.state.char.join("_");
+        //     window.history.replaceState(stateObj, `/`, "/#_" + link)
 
-        }
+        // }
 
         return (
             <div className="main">
