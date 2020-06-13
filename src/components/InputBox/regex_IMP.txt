@@ -1,0 +1,6 @@
+imp regex :-
+\s[*]|\d*\d$  \\ V1
+\d*\d$|[*]$  \\\ V2
+
+
+(typeof(array[0])).toString()
