@@ -85,7 +85,7 @@ class InputBox extends Component {
 
         if(isValidCron(final)) {
             let stateObj = {id: "100"};
-            let link = final.replace(/ /g, "_");
+            let link = final.trim().replace(/ /g, "_");
             window.history.replaceState(stateObj, `/`, "/#_" + link)
         }   
 
@@ -144,11 +144,11 @@ class InputBox extends Component {
             c > 0? c--: c = 0;
             document.getElementsByClassName("label")[c].style.color = "white";
             document.getElementsByClassName("label")[c].style.backgroundColor = "#ffa48f";
-            e.target.value = temp.join(" ").toString() + "  ";  //Input target is updated
+            // e.target.value = temp.join(" ").toString() + "  ";  //Input target is updated
 
-           if(temp.length !=5 ){
-            this.props.humanFormat("Enter valid statement");
-           }
+        //    if(temp.length !=5 ){
+        //     this.props.humanFormat("Enter valid statement");
+        //    }
 
         }
 
