@@ -50,7 +50,6 @@ This project is using [`react-router-dom v4`](https://reacttraining.com/react-ro
 
 Devesh Pawar <dev2919@gmail.com> http://github.com/dev2919
 
-Prajeesh Javkar <javkarprajeesh@gmail.com> https://github.com/javkarprajeesh
 ## License
 
  - **MIT** : http://opensource.org/licenses/MIT
