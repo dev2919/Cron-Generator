@@ -77,6 +77,13 @@ class InputBox extends Component {
 
     }
 
+    handleChange = (e) => {
+        let final = e.target.value;
+        console.log(final);
+        
+        isValidCron(final)? this.props.humanFormat(cronstrue.toString(final)): this.props.humanFormat("Enter valid statement");
+    }
+
     //The keyDown method will be used to push and pop the parts of expression as soon as certain keys are pressed
 
     handleKeyDown = (e) => {
@@ -91,7 +98,7 @@ class InputBox extends Component {
             e.preventDefault();
         }
 
-        if(this.state.char.length === 5 && e.key != "Backspace"){ e.preventDefault() }
+        // if(this.state.char.length === 5 && e.key != "Backspace"){ e.preventDefault() }
 
         // If SpaceBar is Pressed the ending characters just before a space is pushed in the Expression Array state
         if (e.key == " " && val.match(/\d*\d$|[*]$|[*]?[/]?[-]?\d[/]?[-]?[,]?\d*$/g) != null && this.state.char.length < 5) {
@@ -111,10 +118,15 @@ class InputBox extends Component {
 
             //Final expression is then checked and passed to the in the cronstrue method which is then passed as a prop
 
-            isValidCron(final)? this.props.humanFormat(cronstrue.toString(final)): this.props.humanFormat("Enter valid statement");
-        }
+            // isValidCron(final)? this.props.humanFormat(cronstrue.toString(final)): this.props.humanFormat("Enter valid statement");
 
+
+            
+            
+        }
         
+        
+
 
         //When a Backspace is triggered the last item is poped out of the array and also the input field
 
@@ -169,20 +181,20 @@ class InputBox extends Component {
 
     handleClick = () => {
        
-        var inp = document.getElementById('value');
-        inp.focus(); //sets focus to element
-        var val = inp.value; //store the value of the element
-        inp.value = ''; //clear the value of the element
-        inp.value = val; //set that value back.
+        // var inp = document.getElementById('value');
+        // inp.focus(); //sets focus to element
+        // var val = inp.value; //store the value of the element
+        // inp.value = ''; //clear the value of the element
+        // inp.value = val; //set that value back.
 
     }
 
     handleSelect = () => {
 
-        var inp = document.getElementById('value');
-        inp.addEventListener('select', function () {
-            this.selectionStart = this.selectionEnd;
-        }, false);
+        // var inp = document.getElementById('value');
+        // inp.addEventListener('select', function () {
+        //     this.selectionStart = this.selectionEnd;
+        // }, false);
 
     }
 
@@ -222,7 +234,7 @@ class InputBox extends Component {
 
     render() {
 
-        console.log(this.state.char);
+        // console.log(this.state.char);
         
 
         if (this.state.char.length === 5 && isValidCron(this.state.char.join(" "))) {
@@ -243,7 +255,9 @@ class InputBox extends Component {
                         type="text"
                         onClick={this.handleClick}
                         onFocus={this.handleSelect}
-                        onKeyDown={this.handleKeyDown}></input>
+                        onKeyDown={this.handleKeyDown}
+                        onChange={this.handleChange}
+                        ></input>
                     <i class="fas fa-copy" onClick={this.handleCopy}></i>
 
                 </div>
