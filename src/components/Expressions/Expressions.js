@@ -24,7 +24,7 @@ class Expressions extends Component {
                             <li>Every 2-minute</li>
                         </Link>
                         <Link to="/#_*/3_*_*_*_*">
-                            <li>Every 3-minute</li>
+                            <li>Every 2-minute</li>
                         </Link>
                         <Link to="/#_*/4_*_*_*_*">
                             <li>Every 4-minute</li>
